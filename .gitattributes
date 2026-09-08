@@ -1,0 +1,2 @@
+# Preserve release bytes so Posit's manifest checksums also match on Linux.
+* -text

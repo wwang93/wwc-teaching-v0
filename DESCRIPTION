@@ -1,0 +1,6 @@
+Package: wwcactions
+Title: WWC Teaching Practices and Grounded Conversation
+Version: 0.3.0
+Description: A no-registration Shiny application for thirty WWC practice guides, source-grounded conversations, editable plans, and consent-controlled interaction records.
+Imports: shiny, jsonlite, curl, DBI, RSQLite, digest, uuid, promises, future
+Encoding: UTF-8

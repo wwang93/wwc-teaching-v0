@@ -1,0 +1,13 @@
+.r-library/
+.Rhistory
+.RData
+.Rproj.user/
+.Renviron
+rsconnect/
+*.log
+tests/artifacts/
+private/
+.env
+.env.*
+!.env.example
+manifest.json.tmp

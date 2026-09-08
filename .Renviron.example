@@ -1,0 +1,20 @@
+# Local: copy to .Renviron and edit privately. Never commit or upload .Renviron.
+# Cloud: enter the same values in Connect Cloud's secret environment variables.
+WWC_APP_MODE=local
+OPENAI_API_KEY=
+WWC_AI_MODEL=
+WWC_STORAGE_BACKEND=sqlite
+WWC_SQLITE_PATH=private/wwc.sqlite
+SUPABASE_URL=
+SUPABASE_SECRET_KEY=
+# Legacy JWT service_role fallback. Leave empty when using SUPABASE_SECRET_KEY.
+SUPABASE_SERVICE_ROLE_KEY=
+WWC_AI_SESSION_LIMIT=15
+WWC_AI_DAILY_LIMIT=150
+WWC_AI_MAX_OUTPUT_TOKENS=1800
+WWC_RESEARCH_ENABLED=false
+WWC_CONSENT_VERSION=product-feedback-v1
+# For public deployment set WWC_APP_MODE=public and WWC_STORAGE_BACKEND=supabase.
+# Choose an API model supporting Responses API structured outputs.
+# For a formal study, use the approved consent text and version, then enable study mode.
+# WWC_CONSENT_TEXT="..."

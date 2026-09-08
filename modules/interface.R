@@ -1,0 +1,63 @@
+event_button <- function(type, id, text, class = "btn btn-secondary")
+  tags$button(type="button",class=class,`data-event`=type,`data-source`=id,text)
+pdf_link <- function(g,page=1L,label="Open original PDF",id=NULL)
+  tags$a(href=paste0("sources/",URLencode(g$source_filename,reserved=TRUE),"#page=",page),target="_blank",rel="noopener",
+    class="source-link",`data-event`="pdf_opened",`data-source`=id %||% g$guide_id,label)
+rating_badge <- function(a) span(class=paste("rating",tolower(gsub("[^a-zA-Z]+","-",a$evidence))),
+  if(a$evidence %in% c("Strong","Moderate","Minimal","Low"))paste(a$evidence,"evidence") else a$evidence)
+grade_choices <- c("Any grade / stage"="all","Pre-K","K",as.character(1:12),"Postsecondary")
+role_choices <- c("Any role"="all","Classroom teacher","Intervention specialist","School / district leader","Counselor / advisor","Postsecondary educator")
+domain_choices <- c("All areas"="all",setNames(unique(vapply(corpus$guides,function(g)g$domain_id,"")),
+  unique(vapply(corpus$guides,function(g)g$domain_label,""))))
+
+ui <- fluidPage(
+  tags$head(tags$title("AskAboutEdu | Teaching practices"),tags$meta(name="viewport",content="width=device-width, initial-scale=1"),
+    tags$link(rel="stylesheet",href="styles.css"),tags$script(src="interactions.js")),
+  div(class="app-shell",
+    tags$header(class="app-header",div(class="brand",span(class="brand-mark","a"),
+      div(strong("AskAboutEdu"),span(class="brand-sub","Teaching with evidence"))),span(class="collection-label","THE WWC COLLECTION")),
+    tabsetPanel(id="main_tab",type="tabs",
+      tabPanel("Explore practices",value="explore",
+        div(class="hero",div(p(class="eyebrow","START WITH YOUR CLASSROOM"),h1("What would you like",tags$br(),em("to work on?")),
+          p(class="hero-copy","Find a relevant practice, understand the evidence, and shape a next step for your setting.")),
+          div(class="hero-note",span(class="large-number","30"),p("practice guides"),div(class="thin-rule"),
+            p("Reading & writing · Mathematics · Behavior · School improvement · Higher education"))),
+        div(class="panel search-panel",textAreaInput("search_question","Describe your question or search a topic",rows=2,width="100%",
+          placeholder="For example: My fourth graders get stuck reading multisyllabic words. How could I help?"),
+          div(class="search-filters",selectInput("search_grade","Grade / stage",grade_choices,selectize=FALSE),
+            selectInput("search_role","Your role",role_choices,selectize=FALSE),selectInput("search_domain","Area of practice",domain_choices,selectize=FALSE)),
+          div(class="toolbar",actionButton("find_practices","Find practices",class="btn-primary"),
+            actionButton("ask_home","Ask AI about my question",class="btn-secondary")),uiOutput("home_ai_note")),
+        div(class="section-heading",h2("Practices to explore"),span("Choose a starting point; check what fits.")),uiOutput("search_results"),
+        tags$details(class="panel collection-panel",open="open",tags$summary("Browse all 30 guides"),uiOutput("guide_collection"))),
+      tabPanel("My workspace",value="workspace",
+        div(class="workspace-heading",h1("Make the practice your own."),p("Keep the source nearby as you explore, ask, and decide.")),
+        div(class="workspace-layout",div(class="practice-column",uiOutput("action_content"),uiOutput("source_content"),uiOutput("plan_editor")),
+          tags$aside(class="panel conversation-panel",div(class="section-heading",h2("Ask & explore"),actionButton("clear_chat","New conversation",class="text-button")),
+            uiOutput("chat_context"),uiOutput("conversation"),
+            div(class="chat-composer",textAreaInput("chat_question","Your question",rows=3,width="100%",
+              placeholder="Ask about the evidence, an implementation step, or a change for your setting."),
+              textAreaInput("teacher_context","Your setting and constraints (optional)",rows=2,width="100%",
+                placeholder="Grade, learner needs, time, resources, and what you have already tried."),
+              div(class="toolbar",actionButton("send_chat","Send question",class="btn-primary"),
+                actionButton("adapt_action","Help me adapt this practice",class="btn-secondary")),uiOutput("ai_status"),
+              p(class="fine-print","Your question and relevant sources are sent to the AI service. Leave out student names and identifying details."))))),
+      tabPanel("About & data",value="about",
+        div(class="about-wrap",h1("Evidence you can inspect."),
+          p("AskAboutEdu helps you explore recommendations from 30 What Works Clearinghouse practice guides, examine their sources, and develop your own next steps."),
+          div(class="panel",h2("How to use this collection"),tags$ol(tags$li("Describe your need or browse a guide."),
+            tags$li("Open a practice and inspect its source."),tags$li("Ask a question or describe an adaptation."),
+            tags$li("Edit your plan and record your reason for trying, adapting, or setting aside the practice.")),
+            p("Evidence labels belong to the original WWC recommendations. A suggested adaptation has not inherited that rating. AI can misinterpret a source; use the linked passages to check claims that matter to your decision."),
+            p("This version uses the supplied practice-guide collection. It does not search intervention reports, ERIC, or the web. A guide may include intervention practices, but that is not an effectiveness review of a named program.")),
+          div(class="panel",h2("Your data choices"),p(cfg$consent_text),
+            if(cfg$research_enabled)textInput("participant_code","Study code (provided by the researcher)"),
+            checkboxInput("record_consent","I agree to save this session's interactions",value=FALSE),uiOutput("storage_status"),
+            div(class="toolbar",actionButton("retry_storage","Retry pending saves",class="btn-secondary"),
+              downloadButton("download_session","Download my session",class="btn-secondary"),
+              actionButton("delete_session","Delete this session's saved data",class="btn-secondary")),
+            p(class="fine-print","Stopping recording prevents new records. It does not delete records already saved. Deleting session data does not undo processing already performed by the AI provider. No account is required; this session is not a cross-device identity.")),
+          div(class="panel",h2("Sources and versions"),p("151 recommendations · 14 subparts · 600 implementation components. Guide and source versions are retained with your exported plan."),
+            tags$details(tags$summary("Supporting overviews"),lapply(Filter(function(g)g$document_type!="practice_guide",
+              jsonlite::read_json("data/catalog.json")$documents),function(g)div(p(g$title),pdf_link(g)))))))),
+    tags$footer("AskAboutEdu · Independent educational application · Sources: IES / What Works Clearinghouse")))

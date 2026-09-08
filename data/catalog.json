@@ -1,0 +1,1497 @@
+{
+  "catalog_version": "0.2.0",
+  "corpus_id": "wwc-v0-supplied-practice-guides-33",
+  "created_at": "2026-09-05",
+  "source_manifest": {
+    "filename": "guides-manifest.json",
+    "sha256": "2c212167e06c8d2c976f84679fafcb53b59d41215b10607ee5f7bc1c03c56552",
+    "manifest_version": "1.0",
+    "corpus_id": "wwc-practice-guide-actions-v1",
+    "created_at": "2026-09-01",
+    "source_archive": {
+      "filename": "1b-practice_guides-20260826T151616Z-1-001.zip",
+      "sha256": "c5da8120826bf31fde4b802a18ef9dc19792547ad00b4df4044426207757d711"
+    }
+  },
+  "navigation_metadata_note": "Domain, role, learner, grade, and keyword tags are draft product navigation metadata, not WWC ratings, new evidence judgments, or human approval. A single primary domain is used for counting; guides can span domains. An empty grades array means individual grade boundaries have not been assigned, not that the guide applies to all grades. Pre-K includes preschool. source_inventory preserves the original inventory's historical statuses; live action counts and review status must be computed from current action records. Supporting documents are for navigation only. This catalog covers the user's supplied 33 PDFs and does not claim to cover all current WWC resources.",
+  "inventory": {
+    "pdf_count": 33,
+    "practice_guide_count": 30,
+    "supporting_document_count": 3,
+    "intervention_report_count": 0,
+    "total_pdf_pages": 3165
+  },
+  "domains": [
+    {
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "practice_guide_count": 9
+    },
+    {
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "practice_guide_count": 7
+    },
+    {
+      "domain_id": "behavior_early_childhood",
+      "domain_label": "Behavior, social-emotional learning, and early childhood",
+      "practice_guide_count": 3
+    },
+    {
+      "domain_id": "instruction_data",
+      "domain_label": "General instruction and data use",
+      "practice_guide_count": 2
+    },
+    {
+      "domain_id": "engagement_pathways",
+      "domain_label": "Engagement, dropout, pathways, and school improvement",
+      "practice_guide_count": 5
+    },
+    {
+      "domain_id": "postsecondary",
+      "domain_label": "Postsecondary teaching and support",
+      "practice_guide_count": 4
+    },
+    {
+      "domain_id": "supporting",
+      "domain_label": "Guide overviews and navigation",
+      "practice_guide_count": 0
+    }
+  ],
+  "documents": [
+    {
+      "guide_id": "wwc-encouraging-girls-math-science",
+      "title": "Encouraging Girls in Math and Science",
+      "source_filename": "20072003.pdf",
+      "publication_date": "2007-09",
+      "page_count": 55,
+      "sha256": "93050f70a77ea40a3dfba9a805e715f052f3d5df67b7368da3cde6caf6fac7d9",
+      "document_type": "practice_guide",
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "grades": [],
+      "roles": [
+        "Classroom teacher",
+        "Counselor / advisor",
+        "School / district leader"
+      ],
+      "learner_scope": "Girls' participation, confidence, and learning in mathematics and science.",
+      "keywords": [
+        "girls",
+        "STEM",
+        "science",
+        "mathematics",
+        "motivation",
+        "feedback",
+        "spatial skills"
+      ],
+      "scope_note": "The guide names elementary, middle, and high school teachers (PDF p. 16). Exact grade boundaries are not assigned; check recommendation-specific applicability.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/20072003.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-organizing-instruction-study",
+      "title": "Organizing Instruction and Study to Improve Student Learning",
+      "source_filename": "20072004.pdf",
+      "publication_date": "2007-09",
+      "page_count": 63,
+      "sha256": "5e6a7602f80c3856875e5461aab1b1d20404dcf8dd761d34b9cd8698b9196154",
+      "document_type": "practice_guide",
+      "domain_id": "instruction_data",
+      "domain_label": "General instruction and data use",
+      "grades": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Counselor / advisor"
+      ],
+      "learner_scope": "Students learning and retaining knowledge across subject areas.",
+      "keywords": [
+        "study skills",
+        "spacing",
+        "retrieval practice",
+        "worked examples",
+        "learning",
+        "instruction"
+      ],
+      "scope_note": "The stated direct concern is grades 3-12 (PDF p. 14); potential college relevance is mentioned but is not treated as equivalent scope.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/20072004.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-effective-literacy-english-learners-elementary",
+      "title": "Effective Literacy and English Language Instruction for English Learners in the Elementary Grades",
+      "source_filename": "20074011.pdf",
+      "publication_date": "2007-12",
+      "page_count": 55,
+      "sha256": "68689d817c64af9ac719c1c1ab310125960caf4ad9798484e1c242787993988b",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "English learners in elementary grades receiving English literacy and language instruction.",
+      "keywords": [
+        "English learners",
+        "literacy",
+        "vocabulary",
+        "reading",
+        "peer learning",
+        "screening"
+      ],
+      "scope_note": "The guide excludes English learners in grades 6-12 and addresses kindergarten and grades 1-5 in its recommendations. It does not resolve language-of-initial-instruction policy.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/20074011.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-teaching-content-literacy-english-learners"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-teaching-secondary-writing",
+      "title": "Teaching Secondary Students to Write Effectively",
+      "source_filename": "508_WWCPG_SecondaryWriting_122719.pdf",
+      "publication_date": "2016-11",
+      "page_count": 97,
+      "sha256": "d98f2bd3843ebfaa49eabbc653878581906d706be1658c97e254e62fa7dec80e",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students developing writing skills in grades 6-12, including across content areas.",
+      "keywords": [
+        "writing",
+        "secondary",
+        "model practice reflect",
+        "assessment",
+        "reading and writing"
+      ],
+      "scope_note": "Grade scope is stated in the guide's introductory description; individual strategies still require contextual judgment.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/508_WWCPG_SecondaryWriting_122719.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-elementary-writing"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-improving-adolescent-literacy",
+      "title": "Improving Adolescent Literacy: Effective Classroom and Intervention Practices",
+      "source_filename": "adlit_pg_082608.pdf",
+      "publication_date": "2008-08",
+      "page_count": 65,
+      "sha256": "893db948fe7bf4add870a2729da1cfb41c738de4b232e28da6cf116962a16bc0",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "Upper elementary, middle, and high school readers, including students needing intensive reading support.",
+      "keywords": [
+        "adolescent literacy",
+        "reading",
+        "comprehension",
+        "vocabulary",
+        "discussion",
+        "motivation",
+        "intervention"
+      ],
+      "scope_note": "The introduction explicitly includes grades 4 and 5 within adolescent literacy; intervention recommendations have a narrower learner focus than universal classroom practices.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/adlit_pg_082608.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-reading-interventions-4-9"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-reducing-elementary-behavior-problems",
+      "title": "Reducing Behavior Problems in the Elementary School Classroom",
+      "source_filename": "behavior_pg_092308.pdf",
+      "publication_date": "2008-09",
+      "page_count": 87,
+      "sha256": "ee1cd24d55bee503d9cf9d5c4eb8d6e60f0c73717b17e0278885ef65fdb2e35f",
+      "document_type": "practice_guide",
+      "domain_id": "behavior_early_childhood",
+      "domain_label": "Behavior, social-emotional learning, and early childhood",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "Elementary students whose behavior disrupts classroom learning; classroom and school supports.",
+      "keywords": [
+        "behavior",
+        "classroom management",
+        "antecedents",
+        "environment",
+        "social skills",
+        "collaboration"
+      ],
+      "scope_note": "The audience section defines elementary as kindergarten through grade 5. Some recommendations require collaboration beyond the classroom.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/behavior_pg_092308.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-teacher-delivered-behavioral-interventions-k-5"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-teacher-delivered-behavioral-interventions-k-5",
+      "title": "Teacher-Delivered Behavioral Interventions in Grades K-5: A Practice Guide for Educators",
+      "source_filename": "behavioral-interventions-practice-guide_v3a_508a.pdf",
+      "publication_date": "2024-12",
+      "page_count": 166,
+      "sha256": "4d8db709ec45d0c72f9a6efda61462b83b144430ad59a0b383ee506fea53e68a",
+      "document_type": "practice_guide",
+      "domain_id": "behavior_early_childhood",
+      "domain_label": "Behavior, social-emotional learning, and early childhood",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students in grades K-5; low-intensity teacher-delivered behavioral supports in classrooms.",
+      "keywords": [
+        "behavior",
+        "expectations",
+        "reminders",
+        "praise",
+        "rewards",
+        "choice",
+        "engagement",
+        "self-monitoring",
+        "feedback"
+      ],
+      "scope_note": "Classroom behavioral supports are not a substitute for individually indicated specialist assessment or an individualized support plan.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/behavioral-interventions-practice-guide_v3a_508a.pdf",
+      "source_inventory": {
+        "inventory_status": "cover_verified",
+        "pilot_candidate": true,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-reducing-elementary-behavior-problems"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-using-student-achievement-data",
+      "title": "Using Student Achievement Data to Support Instructional Decision Making",
+      "source_filename": "dddm_pg_092909.pdf",
+      "publication_date": "2009-09",
+      "page_count": 76,
+      "sha256": "c6031bc95b96193f5aa00f34ae67e27f9c8ac948311177bc6e585a121538c0a4",
+      "document_type": "practice_guide",
+      "domain_id": "instruction_data",
+      "domain_label": "General instruction and data use",
+      "grades": [],
+      "roles": [
+        "Classroom teacher",
+        "School / district leader"
+      ],
+      "learner_scope": "Students supported by classroom, school, and district use of achievement data.",
+      "keywords": [
+        "data use",
+        "assessment",
+        "instructional decisions",
+        "student goals",
+        "data systems",
+        "school improvement"
+      ],
+      "scope_note": "No single numerical grade boundary is assigned from the scope section. Recommendations 1-2 concern classrooms, 3-4 schools, and 5 district systems; role fit is recommendation-specific.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/dddm_pg_092909.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-dropout-prevention",
+      "title": "Dropout Prevention",
+      "source_filename": "dp_pg_090308.pdf",
+      "publication_date": "2008-09",
+      "page_count": 72,
+      "sha256": "5b4775655d5ac8c7b772f84e0ff226a7cbd77ee8b9dbaba0a5b26ccb774e740c",
+      "document_type": "practice_guide",
+      "domain_id": "engagement_pathways",
+      "domain_label": "Engagement, dropout, pathways, and school improvement",
+      "grades": [],
+      "roles": [
+        "School / district leader",
+        "Classroom teacher",
+        "Counselor / advisor"
+      ],
+      "learner_scope": "Middle and high school students at risk of leaving school before graduation.",
+      "keywords": [
+        "dropout",
+        "attendance",
+        "early warning",
+        "student support",
+        "engagement",
+        "graduation"
+      ],
+      "scope_note": "The introduction names middle and high schools without a single numerical grade range. Many recommendations require school or district coordination.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/dp_pg_090308.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-preventing-secondary-dropout"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-teaching-math-young-children",
+      "title": "Teaching Math to Young Children",
+      "source_filename": "early_math_pg_111313.pdf",
+      "publication_date": "2013-11",
+      "page_count": 165,
+      "sha256": "2cb8b9d2e406c72107c435bbbecf6a6f7101cb1e07cefb1fd8dd96f59aeb03bf",
+      "document_type": "practice_guide",
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "grades": [
+        "Pre-K",
+        "K"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "School / district leader"
+      ],
+      "learner_scope": "Children ages 3-6 in preschool, prekindergarten, and kindergarten settings.",
+      "keywords": [
+        "early math",
+        "number",
+        "geometry",
+        "patterns",
+        "measurement",
+        "developmental progression"
+      ],
+      "scope_note": "Pre-K includes preschool in this navigation system. Age 6 does not automatically extend this guide's stated setting to grade 1.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/early_math_pg_111313.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-preparing-young-children-school"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-teaching-content-literacy-english-learners",
+      "title": "Teaching Academic Content and Literacy to English Learners in Elementary and Middle School",
+      "source_filename": "english_learners_pg_040114.pdf",
+      "publication_date": "2014-04",
+      "page_count": 115,
+      "sha256": "6f39b0f96514344b3773b21ff6f53b7cc2503407ce0e325d7525463115893596",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "English learners in elementary and middle school, including content-area language and literacy learning.",
+      "keywords": [
+        "English learners",
+        "academic vocabulary",
+        "content teaching",
+        "oral language",
+        "writing",
+        "small-group intervention"
+      ],
+      "scope_note": "Language and literacy support can occur in mathematics, science, and other subjects; this is not limited to English class. Evidence and learner fit differ by recommendation.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/english_learners_pg_040114.pdf",
+      "source_inventory": {
+        "inventory_status": "cover_verified",
+        "pilot_candidate": true,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "pilot_draft_complete",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-effective-literacy-english-learners-elementary"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-fractions-instruction-k-8",
+      "title": "Developing Effective Fractions Instruction for Kindergarten Through 8th Grade Practice Guide",
+      "source_filename": "fractions_pg_093010.pdf",
+      "publication_date": "2010-09",
+      "page_count": 90,
+      "sha256": "ed94a5ee4127a32240fd0114d2afc025c15ba8233014da3c07601157b770c252",
+      "document_type": "practice_guide",
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "Students developing early foundations and increasingly advanced understanding of fractions through grade 8.",
+      "keywords": [
+        "fractions",
+        "number lines",
+        "ratio",
+        "rate",
+        "proportion",
+        "division",
+        "conceptual understanding"
+      ],
+      "scope_note": "Recommendations span different developmental stages; not every fractions recommendation is intended for every grade K-8.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/fractions_pg_093010.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-navigate-path-college",
+      "title": "Helping Students Navigate the Path to College: What High Schools Can Do",
+      "source_filename": "higher_ed_pg_091509.pdf",
+      "publication_date": "2009-09",
+      "page_count": 86,
+      "sha256": "bb84e3ce3a269f339b447c0a18dd7756d8c1f7cc25b8d733e7debcb84b3df74d",
+      "document_type": "practice_guide",
+      "domain_id": "engagement_pathways",
+      "domain_label": "Engagement, dropout, pathways, and school improvement",
+      "grades": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "roles": [
+        "School / district leader",
+        "Counselor / advisor",
+        "Classroom teacher"
+      ],
+      "learner_scope": "High school students navigating academic preparation, college applications, and financial aid.",
+      "keywords": [
+        "college access",
+        "college readiness",
+        "applications",
+        "financial aid",
+        "advising",
+        "high school"
+      ],
+      "scope_note": "The guide addresses high schools and preparation beginning by ninth grade. It concerns transition to college, not instruction for enrolled college students.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/higher_ed_pg_091509.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-practice-guides-help-teachers",
+      "title": "How Can the WWC Practice Guides Help Teachers?",
+      "source_filename": "How_can_the_WWC_Practice_Guides_Help_Teachers_508.pdf",
+      "publication_date": null,
+      "page_count": 1,
+      "sha256": "e89a69cfa878be70d391c04eb12b604b3af71ed47899d14793df64ed4cac8fb8",
+      "document_type": "supporting_infographic",
+      "domain_id": "supporting",
+      "domain_label": "Guide overviews and navigation",
+      "grades": [],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader",
+        "Counselor / advisor",
+        "Postsecondary educator"
+      ],
+      "learner_scope": "Educators learning how WWC practice guides are organized and used.",
+      "keywords": [
+        "overview",
+        "how to use",
+        "practice guides",
+        "navigation"
+      ],
+      "scope_note": "A one-page explainer, not an independent practice guide or intervention. Publication date is unavailable in the source inventory; grade filtering is not applicable.",
+      "catalog_type": "supporting_document",
+      "source_path": "sources/How_can_the_WWC_Practice_Guides_Help_Teachers_508.pdf",
+      "source_inventory": {
+        "inventory_status": "cover_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": false,
+        "action_extraction_status": "not_applicable",
+        "exclusion_reason": "Explains the purpose and contents of practice guides but is not a full practice guide."
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-math-problem-solving-4-8",
+      "title": "Improving Mathematical Problem Solving in Grades 4 Through 8",
+      "source_filename": "MPS_PG_043012.pdf",
+      "publication_date": "2012-04",
+      "page_count": 92,
+      "sha256": "04ba3e82541208fb8786a0a945682bf9eda7555e4c30d896c377c4369469210a",
+      "document_type": "practice_guide",
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "grades": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students learning mathematical problem solving in grades 4-8.",
+      "keywords": [
+        "mathematics",
+        "problem solving",
+        "visual representations",
+        "multiple strategies",
+        "reflection",
+        "monitoring"
+      ],
+      "scope_note": "The scope is mathematical problem-solving instruction, not evidence for a named commercial curriculum.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/MPS_PG_043012.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-out-of-school-time",
+      "title": "Structuring Out-of-School Time to Improve Academic Achievement",
+      "source_filename": "ost_pg_072109.pdf",
+      "publication_date": "2009-07",
+      "page_count": 98,
+      "sha256": "eff1e2b8efe42ec0fcc83d40c01c39320995f5bddd569e04d98f39aeb9b4d575",
+      "document_type": "practice_guide",
+      "domain_id": "engagement_pathways",
+      "domain_label": "Engagement, dropout, pathways, and school improvement",
+      "grades": [],
+      "roles": [
+        "Classroom teacher",
+        "School / district leader"
+      ],
+      "learner_scope": "Elementary and middle school students in academically focused after-school, weekend, or summer programs.",
+      "keywords": [
+        "out-of-school time",
+        "after-school",
+        "summer school",
+        "academic support",
+        "attendance",
+        "program quality"
+      ],
+      "scope_note": "The evidence largely concerns urban, low-income, high-needs elementary and middle school populations (PDF p. 14). Exact grade boundaries are not assigned. The guide cautions that high school objectives and implementation may differ.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/ost_pg_072109.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-reading-comprehension-k-3",
+      "title": "Improving Reading Comprehension in Kindergarten Through 3rd Grade",
+      "source_filename": "readingcomp_pg_092810.pdf",
+      "publication_date": "2010-09",
+      "page_count": 87,
+      "sha256": "aac552fabdcb56006630441200f2fc4911a1fee3f330d64f06de8f7671691128",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students developing reading comprehension from kindergarten through grade 3.",
+      "keywords": [
+        "reading comprehension",
+        "text structure",
+        "discussion",
+        "text selection",
+        "motivation"
+      ],
+      "scope_note": "Comprehension is the focus; foundational decoding instruction has a separate guide.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/readingcomp_pg_092810.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-foundational-reading-k-3",
+        "wwc-reading-rti-primary"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-math-rti-elementary-middle",
+      "title": "Assisting Students Struggling with Mathematics: Response to Intervention (RtI) for Elementary and Middle Schools",
+      "source_filename": "rti_math_pg_042109.pdf",
+      "publication_date": "2009-04",
+      "page_count": 104,
+      "sha256": "a882d20f729be8fe33fe745f11b904467e6ee5f5744f9f753cd11c747c2d21e2",
+      "document_type": "practice_guide",
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "Elementary and middle school students struggling with mathematics within multi-tiered supports.",
+      "keywords": [
+        "mathematics",
+        "RtI",
+        "MTSS",
+        "screening",
+        "intervention",
+        "progress monitoring",
+        "number"
+      ],
+      "scope_note": "The guide addresses K-8 systems and instruction; recommendations specify different grade ranges and tiers.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/rti_math_pg_042109.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-math-intervention-elementary"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-reading-rti-primary",
+      "title": "Assisting Students Struggling with Reading: Response to Intervention (RtI) and Multi-Tier Intervention in the Primary Grades",
+      "source_filename": "rti_reading_pg_021809.pdf",
+      "publication_date": "2009-02",
+      "page_count": 60,
+      "sha256": "839fb65cf8ebf52278922de69d0e195238cd25f8b368cd9f670d8603950e42f0",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "K",
+        "1",
+        "2"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "Students in the primary grades K-2 who may need differentiated or intensive reading support.",
+      "keywords": [
+        "reading",
+        "RtI",
+        "MTSS",
+        "screening",
+        "progress monitoring",
+        "small groups",
+        "foundational skills"
+      ],
+      "scope_note": "The introduction defines the primary-grade focus as K-2. Do not infer K-3 from other reading guides' titles.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/rti_reading_pg_021809.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-foundational-reading-k-3",
+        "wwc-reading-comprehension-k-3"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-preparing-young-children-school",
+      "title": "Preparing Young Children for School",
+      "source_filename": "TO4_PRACTICE_GUIDE_Preparing-for-School_07222022_v6.pdf",
+      "publication_date": "2022-08",
+      "page_count": 187,
+      "sha256": "738fefb64c1d37c4a5b52d758d5cd6a01b4cdc0229510b53eef6148fd6256731",
+      "document_type": "practice_guide",
+      "domain_id": "behavior_early_childhood",
+      "domain_label": "Behavior, social-emotional learning, and early childhood",
+      "grades": [
+        "Pre-K"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "School / district leader"
+      ],
+      "learner_scope": "Children in the one or two years before kindergarten in preschool, pre-K, Head Start, and similar settings.",
+      "keywords": [
+        "preschool",
+        "school readiness",
+        "social-emotional learning",
+        "executive function",
+        "early literacy",
+        "early mathematics"
+      ],
+      "scope_note": "This cross-domain preschool guide includes literacy and mathematics as well as social-emotional and executive-function skills; one primary domain is used only for navigation.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/TO4_PRACTICE_GUIDE_Preparing-for-School_07222022_v6.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-teaching-math-young-children"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-turning-around-low-performing-schools",
+      "title": "Turning Around Chronically Low-Performing Schools",
+      "source_filename": "Turnaround_pg_04181.pdf",
+      "publication_date": "2008-05",
+      "page_count": 49,
+      "sha256": "3002244031aa5a2ab84670ed1bce70754d2b128bb19dc830937737d925f67e4e",
+      "document_type": "practice_guide",
+      "domain_id": "engagement_pathways",
+      "domain_label": "Engagement, dropout, pathways, and school improvement",
+      "grades": [],
+      "roles": [
+        "School / district leader"
+      ],
+      "learner_scope": "Students in chronically low-performing schools addressed through school and district improvement strategies.",
+      "keywords": [
+        "school turnaround",
+        "leadership",
+        "instructional focus",
+        "staff capacity",
+        "school improvement"
+      ],
+      "scope_note": "The intended decision makers are superintendents, principals, and school decision-making councils. No single numerical grade boundary is assigned; these are organizational recommendations.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/Turnaround_pg_04181.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-effective-postsecondary-advising",
+      "title": "Effective Advising for Postsecondary Students: A Practice Guide for Educators",
+      "source_filename": "WWC-practice-guide-advising-full-text-revised2.pdf",
+      "publication_date": "2021-10",
+      "page_count": 132,
+      "sha256": "66e607e35c0d96035d0426cfc698e3ca149785fcd34d3b35df0d7694870d7588",
+      "document_type": "practice_guide",
+      "domain_id": "postsecondary",
+      "domain_label": "Postsecondary teaching and support",
+      "grades": [
+        "Postsecondary"
+      ],
+      "roles": [
+        "Counselor / advisor",
+        "Postsecondary educator"
+      ],
+      "learner_scope": "Students receiving advising in postsecondary institutions.",
+      "keywords": [
+        "advising",
+        "postsecondary",
+        "student support",
+        "retention",
+        "academic planning",
+        "relationships"
+      ],
+      "scope_note": "Includes institution-level advising design; the postsecondary-educator label also covers college program leadership within this product's role vocabulary.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/WWC-practice-guide-advising-full-text-revised2.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-reading-interventions-4-9",
+      "title": "Providing Reading Interventions for Students in Grades 4-9",
+      "source_filename": "WWC-practice-guide-reading-intervention-full-text.pdf",
+      "publication_date": "2022-03",
+      "page_count": 204,
+      "sha256": "ea483ab41a417eea73703073114997ddb080ed1b81a003db2990e145ab7ab90e",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students in grades 4-9 who struggle with reading and need intervention.",
+      "keywords": [
+        "reading intervention",
+        "decoding",
+        "fluency",
+        "comprehension",
+        "complex text",
+        "multisyllabic words"
+      ],
+      "scope_note": "Despite 'interventions' in its title, this is a practice guide synthesizing recommended practices, not a WWC Intervention Report.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/WWC-practice-guide-reading-intervention-full-text.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-improving-adolescent-literacy"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-career-pathways-community-colleges",
+      "title": "Designing and Delivering Career Pathways at Community Colleges: A Practice Guide for Educators",
+      "source_filename": "WWC-PraxGuide-Career-Pathways-full-text-Final-508.pdf",
+      "publication_date": "2021-03",
+      "page_count": 148,
+      "sha256": "85b1289b4457a80f56182e6efe8cf924f2a45173cebe69db5479687c391f3cab",
+      "document_type": "practice_guide",
+      "domain_id": "postsecondary",
+      "domain_label": "Postsecondary teaching and support",
+      "grades": [
+        "Postsecondary"
+      ],
+      "roles": [
+        "Postsecondary educator",
+        "Counselor / advisor"
+      ],
+      "learner_scope": "Community college students participating in career pathways and workforce-oriented programs.",
+      "keywords": [
+        "career pathways",
+        "community college",
+        "workforce",
+        "credentials",
+        "employers",
+        "student support"
+      ],
+      "scope_note": "Program design and institutional partnerships extend beyond an individual classroom educator's control.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/WWC-PraxGuide-Career-Pathways-full-text-Final-508.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-technology-postsecondary-learning",
+      "title": "Using Technology to Support Postsecondary Student Learning: A Practice Guide for College and University Administrators, Advisors, and Faculty",
+      "source_filename": "wwc-using-tech-postsecondary.pdf",
+      "publication_date": "2019-05",
+      "page_count": 109,
+      "sha256": "fd0b795ad13390422d1777b1df8225d89c842ba243d98b7ff43f6151878679d8",
+      "document_type": "practice_guide",
+      "domain_id": "postsecondary",
+      "domain_label": "Postsecondary teaching and support",
+      "grades": [
+        "Postsecondary"
+      ],
+      "roles": [
+        "Postsecondary educator",
+        "Counselor / advisor"
+      ],
+      "learner_scope": "College and university students supported by technology-enabled learning and advising.",
+      "keywords": [
+        "technology",
+        "postsecondary",
+        "online learning",
+        "feedback",
+        "self-regulated learning",
+        "simulation"
+      ],
+      "scope_note": "The source explicitly addresses college and university administrators, advisors, and faculty. Technology recommendations are not endorsements of every product in a category.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/wwc-using-tech-postsecondary.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-math-intervention-elementary",
+      "title": "Assisting Students Struggling with Mathematics: Intervention in the Elementary Grades",
+      "source_filename": "WWC2021006-Math-PG.pdf",
+      "publication_date": "2021-03",
+      "page_count": 165,
+      "sha256": "98c03aed4a280ea2d0936226b54eb54a531aa4d832077c5b6c295ef4ac69f435",
+      "document_type": "practice_guide",
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students struggling with mathematics in grades K-6 in small-group or one-to-one intervention settings.",
+      "keywords": [
+        "math intervention",
+        "systematic instruction",
+        "mathematical language",
+        "representations",
+        "number lines",
+        "word problems",
+        "fluency"
+      ],
+      "scope_note": "The introduction explicitly limits scope to K-6 (PDF pp. 8-9). This is narrower than the related 2009 K-8 RtI guide.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/WWC2021006-Math-PG.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-math-rti-elementary-middle"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-algebra-middle-high",
+      "title": "Teaching Strategies for Improving Algebra Knowledge in Middle and High School Students",
+      "source_filename": "WWC_Algebra_PG_Revised_02022018.pdf",
+      "publication_date": "2019-01",
+      "page_count": 71,
+      "sha256": "83f6f973eb79caa2170f2818034d533322258708d38a777620862b95a9cbc730",
+      "document_type": "practice_guide",
+      "domain_id": "mathematics",
+      "domain_label": "Mathematics and STEM",
+      "grades": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students learning algebra in grades 6-12.",
+      "keywords": [
+        "algebra",
+        "solved problems",
+        "representations",
+        "structure",
+        "reasoning",
+        "strategies"
+      ],
+      "scope_note": "Preserves the supplied inventory publication date, 2019-01; the PDF also cites the original 2014 guide. Dates are not treated as automatic evidence refreshes.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/WWC_Algebra_PG_Revised_02022018.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-postsecondary-developmental-education",
+      "title": "Strategies for Postsecondary Students in Developmental Education",
+      "source_filename": "wwc_dev_ed_112916.pdf",
+      "publication_date": "2016-11",
+      "page_count": 116,
+      "sha256": "e338645198618bc2541dc956656940f98f080675d0fd73ccd9e8a283c81cd5fe",
+      "document_type": "practice_guide",
+      "domain_id": "postsecondary",
+      "domain_label": "Postsecondary teaching and support",
+      "grades": [
+        "Postsecondary"
+      ],
+      "roles": [
+        "Postsecondary educator",
+        "Counselor / advisor"
+      ],
+      "learner_scope": "Postsecondary students referred to developmental education or needing support for college-level coursework.",
+      "keywords": [
+        "developmental education",
+        "placement",
+        "remediation",
+        "academic support",
+        "college readiness",
+        "postsecondary"
+      ],
+      "scope_note": "Institutional placement and course-pathway decisions require authority beyond an individual classroom teacher.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/wwc_dev_ed_112916.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-preventing-secondary-dropout",
+      "title": "Preventing Dropout in Secondary Schools",
+      "source_filename": "wwc_dropout_092617.pdf",
+      "publication_date": "2017-09",
+      "page_count": 105,
+      "sha256": "c5b814101f7275833e97c886484962f38c9f11d8073f7c543253815fc74b9359",
+      "document_type": "practice_guide",
+      "domain_id": "engagement_pathways",
+      "domain_label": "Engagement, dropout, pathways, and school improvement",
+      "grades": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "roles": [
+        "School / district leader",
+        "Classroom teacher",
+        "Counselor / advisor"
+      ],
+      "learner_scope": "Secondary students at risk of dropping out and schools coordinating prevention supports.",
+      "keywords": [
+        "dropout prevention",
+        "early warning",
+        "attendance",
+        "engagement",
+        "personalized support",
+        "graduation"
+      ],
+      "scope_note": "The guide's reviewed secondary-school samples are grades 6-12; recommendation-level roles and local implementation conditions differ.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/wwc_dropout_092617.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-dropout-prevention"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-elementary-writing",
+      "title": "Teaching Elementary School Students to Be Effective Writers",
+      "source_filename": "WWC_Elem_Writing_PG_Dec182018.pdf",
+      "publication_date": "2018-10",
+      "page_count": 118,
+      "sha256": "7d7b2928cd60957bbbbd8df221cd1c605afe234f29a79096d63bcce7082e56e6",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "Elementary students developing writing from foundational skills to composition.",
+      "keywords": [
+        "writing",
+        "writing process",
+        "handwriting",
+        "spelling",
+        "sentence construction",
+        "writing community"
+      ],
+      "scope_note": "The guide discusses kindergarten development and reviewed studies through grade 6. Preserves the inventory's 2018-10 date for the supplied revised PDF; original publication was 2012.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/WWC_Elem_Writing_PG_Dec182018.pdf",
+      "source_inventory": {
+        "inventory_status": "cover_verified",
+        "pilot_candidate": true,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-teaching-secondary-writing"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-elementary-guides-overview",
+      "title": "Guides to Evidence-Based Practices for Educators in Elementary Schools",
+      "source_filename": "WWC_Elementary_Guides.pdf",
+      "publication_date": "2020-03",
+      "page_count": 2,
+      "sha256": "4403557259626804b1ad8769ffa2a3b28276b79a577991f7590a26ee314532d1",
+      "document_type": "supporting_overview",
+      "domain_id": "supporting",
+      "domain_label": "Guide overviews and navigation",
+      "grades": [],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader"
+      ],
+      "learner_scope": "Educators navigating selected elementary practice guides.",
+      "keywords": [
+        "overview",
+        "elementary",
+        "evidence map",
+        "ESSA",
+        "navigation"
+      ],
+      "scope_note": "A two-page map of selected guides and evidence tiers, not a separate intervention or full practice guide. Grade applicability belongs to each linked full guide.",
+      "catalog_type": "supporting_document",
+      "source_path": "sources/WWC_Elementary_Guides.pdf",
+      "source_inventory": {
+        "inventory_status": "cover_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": false,
+        "action_extraction_status": "not_applicable",
+        "exclusion_reason": "Summarizes selected elementary practice guides and evidence tiers but is not a full practice guide."
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    },
+    {
+      "guide_id": "wwc-foundational-reading-k-3",
+      "title": "Foundational Skills to Support Reading for Understanding in Kindergarten Through 3rd Grade",
+      "source_filename": "wwc_foundationalreading_040717.pdf",
+      "publication_date": "2016-07",
+      "page_count": 123,
+      "sha256": "9465c221a60a5c62b39ddb7fe822d617ce6a56f8646ed15240aca653456c94fc",
+      "document_type": "practice_guide",
+      "domain_id": "literacy",
+      "domain_label": "Literacy, language, reading, and writing",
+      "grades": [
+        "K",
+        "1",
+        "2",
+        "3"
+      ],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist"
+      ],
+      "learner_scope": "Students developing foundational reading skills from kindergarten through grade 3.",
+      "keywords": [
+        "foundational reading",
+        "phonemic awareness",
+        "phonics",
+        "decoding",
+        "connected text",
+        "academic language"
+      ],
+      "scope_note": "Foundational skills support reading for understanding; this guide and the separate comprehension guide address related but distinct practices.",
+      "catalog_type": "practice_guide",
+      "source_path": "sources/wwc_foundationalreading_040717.pdf",
+      "source_inventory": {
+        "inventory_status": "text_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": true,
+        "action_extraction_status": "not_started",
+        "exclusion_reason": null
+      },
+      "related_guide_ids": [
+        "wwc-reading-comprehension-k-3",
+        "wwc-reading-rti-primary"
+      ],
+      "version_note": "Related guides share a topic or address different years, grade ranges, or aspects of practice. They remain separate sources; this link does not assert that one supersedes another."
+    },
+    {
+      "guide_id": "wwc-secondary-guides-overview",
+      "title": "Guides to Evidence-Based Practices for Educators in Secondary Schools",
+      "source_filename": "WWC_Secondary_Guides.pdf",
+      "publication_date": "2020-03",
+      "page_count": 2,
+      "sha256": "9b751805faf3affc168c60a50f59faf17ded15614877b02cac5831e813e24a94",
+      "document_type": "supporting_overview",
+      "domain_id": "supporting",
+      "domain_label": "Guide overviews and navigation",
+      "grades": [],
+      "roles": [
+        "Classroom teacher",
+        "Intervention specialist",
+        "School / district leader",
+        "Counselor / advisor"
+      ],
+      "learner_scope": "Educators navigating selected secondary practice guides.",
+      "keywords": [
+        "overview",
+        "secondary",
+        "evidence map",
+        "ESSA",
+        "navigation"
+      ],
+      "scope_note": "A two-page map of selected guides and evidence tiers, not a separate intervention or full practice guide. Grade applicability belongs to each linked full guide.",
+      "catalog_type": "supporting_document",
+      "source_path": "sources/WWC_Secondary_Guides.pdf",
+      "source_inventory": {
+        "inventory_status": "cover_verified",
+        "pilot_candidate": false,
+        "inclusion_in_action_corpus": false,
+        "action_extraction_status": "not_applicable",
+        "exclusion_reason": "Summarizes selected secondary practice guides and evidence tiers but is not a full practice guide."
+      },
+      "related_guide_ids": [],
+      "version_note": "The supplied PDF and inventory date identify this catalog entry; no replacement or supersession is asserted."
+    }
+  ]
+}
