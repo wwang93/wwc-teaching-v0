@@ -12,9 +12,9 @@ extra = ["manifest.json", "README.md", "DEPLOYMENT.md", "VALIDATION.md", "V0-des
          "install.R", ".Renviron.example", ".gitignore", ".rscignore",
          "scripts/preflight.R", "scripts/live_smoke.R", "scripts/build_manifest.R",
          "scripts/package_v03.py", "deploy/supabase.sql", "deploy/analysis-queries.sql",
-         "tests/check.R", "tests/check_v03.R", "tests/check_async.R", "tests/check_supabase_auth.R", "tests/validate_bundle.py"]
+         "tests/check.R", "tests/check_v03.R", "tests/check_async.R", "tests/check_ai_errors.R", "tests/check_supabase_auth.R", "tests/validate_bundle.py"]
 files = sorted(set(manifest["files"]) | set(extra))
-destination = root.parent / "outputs" / "WWC_V0_3_2026-09-08.zip"
+destination = root.parent / "outputs" / "WWC_V0_3_1_2026-09-08.zip"
 destination.parent.mkdir(exist_ok=True)
 with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as bundle:
     for name in files:

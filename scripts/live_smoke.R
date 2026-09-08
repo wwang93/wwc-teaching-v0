@@ -19,7 +19,7 @@ run_live_check<-function(){
   sid<-new_id()
   on.exit(tryCatch(delete_session_data(cfg,sid),error=function(e)warning("Could not remove this script's synthetic test records; inspect phase=system_test.")),add=TRUE)
   event<-list(event_id=new_id(),session_id=sid,sequence=1L,timestamp_utc=utc_now(),type="deployment_smoke_test",
-    app_version="0.3.0",corpus_version=corpus$corpus_version,consented=TRUE,
+    app_version="0.3.1",corpus_version=corpus$corpus_version,consented=TRUE,
     consent_version="system-test-no-human-data",phase="system_test",payload=list(synthetic=TRUE))
   stopifnot(persist_event(cfg,event),persist_event(cfg,event),length(read_test_rows(sid))==1L)
   stopifnot(delete_session_data(cfg,sid),length(read_test_rows(sid))==0L)

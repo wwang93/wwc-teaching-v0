@@ -8,6 +8,10 @@ cfg$ai_enabled<-TRUE;cfg$model<-"test-fixture-only";cfg$api_key<-"test-placehold
 # request/parser/validator/UI path runs unchanged; no fake provider is in the app.
 post_json<-function(url,body,headers=list(),timeout=45){
   d<-jsonlite::fromJSON(body$input,simplifyVector=FALSE);s<-d$current_retrieval$sources[[1]]
+  if(identical(d$question,"Test output limit"))return(list(status="incomplete",incomplete_details=list(reason="max_output_tokens")))
+  if(identical(d$question,"Test timeout"))service_failure("timeout")
+  if(identical(d$question,"Test API key"))parse_service_response(list(status_code=401L,
+    content=charToRaw(json(list(error=list(code="invalid_api_key",message="PRIVATE_INPUT_MUST_NEVER_BE_LOGGED"))))))
   a<-list(overview=paste("Test fixture, previous turns:",length(d$previous_turns)),
     blocks=list(list(kind="source_guidance",text="Inspect this source before adapting the practice.",sources=list(list(source_id=s$source_id,quote=substr(s$text,1,90)))),
       list(kind="adaptation",text="Discuss one next step for your setting.",sources=list())),
@@ -21,8 +25,8 @@ retrieval_test<-retrieve_context(corpus,search_index,"decoding",pinned="G22-R1")
 request_test<-build_ai_request("Explain",list(),list(),retrieval_test,cfg)
 direct<-perform_ai_request(request_test,cfg)
 stopifnot(!is.null(validate_ai_response(direct$answer,retrieval_test)))
-f<-future::future(perform_ai_request(request_test,cfg),globals=list(request_test=request_test,cfg=cfg,
-  perform_ai_request=perform_ai_request,post_json=post_json,json=json,`%||%`=`%||%`),packages=c("curl","jsonlite"),seed=TRUE)
+request<-request_test;worker_cfg<-cfg
+f<-future::future(perform_ai_request(request,worker_cfg),globals=ai_worker_globals(request,worker_cfg),packages=c("curl","jsonlite"),seed=TRUE)
 tryCatch({rr<-future::value(f);cat("Worker fixture parsed successfully\n")},error=function(e)stop(paste("Test worker:",conditionMessage(e))))
 shiny::testServer(server,{
   session$setInputs(record_consent=FALSE)
@@ -52,6 +56,21 @@ shiny::testServer(server,{
   deadline<-Sys.time()+25
   while(isolate(busy())&&Sys.time()<deadline){later::run_now(0.05);Sys.sleep(0.05);session$flushReact()}
   stopifnot(length(history())==3L,grepl("source checks",chat_error(),fixed=TRUE),any(vapply(events(),function(e)e$type,"")=="ai_answer_rejected"))
+  # Failure categories survive the worker boundary without leaking raw provider text or changing plans.
+  before_plans<-saved_plans()
+  for(test in list(c("Test output limit","AI-OUTPUT-LIMIT"),c("Test timeout","AI-TIMEOUT"),c("Test API key","AI-AUTHENTICATION"))){
+    session$setInputs(send_request=list(question=test[[1]],context="Grade 4",nonce=test[[1]]))
+    deadline<-Sys.time()+25
+    while(isolate(busy())&&Sys.time()<deadline){later::run_now(0.05);Sys.sleep(0.05);session$flushReact()}
+    stopifnot(!busy(),length(history())==3L,identical(saved_plans(),before_plans),grepl(test[[2]],chat_error(),fixed=TRUE),
+      !grepl("PRIVATE_INPUT_MUST_NEVER_BE_LOGGED",chat_error(),fixed=TRUE))
+    last<-tail(events(),1)[[1]];stopifnot(last$type=="ai_service_error",last$payload$diagnostic$reference==test[[2]])
+  }
+  session$setInputs(record_consent=FALSE);event_count<-length(events())
+  session$setInputs(send_request=list(question="Test output limit",context="Grade 4",nonce="unconsented_failure"))
+  deadline<-Sys.time()+25
+  while(isolate(busy())&&Sys.time()<deadline){later::run_now(0.05);Sys.sleep(0.05);session$flushReact()}
+  stopifnot(!busy(),length(events())==event_count,grepl("AI-OUTPUT-LIMIT",chat_error(),fixed=TRUE))
   # A reply to a cleared conversation must not reappear in the new one.
   session$setInputs(send_request=list(question="Explain this practice",context="Grade 4",nonce=7))
   session$setInputs(clear_chat=1)

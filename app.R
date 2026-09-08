@@ -6,7 +6,7 @@ source("modules/core.R", local = TRUE, encoding = "UTF-8")
 source("modules/retrieval.R", local = TRUE, encoding = "UTF-8")
 source("modules/storage.R", local = TRUE, encoding = "UTF-8")
 source("modules/ai.R", local = TRUE, encoding = "UTF-8")
-APP_VERSION <- "0.3.0"
+APP_VERSION <- "0.3.1"
 cfg <- app_config()
 corpus <- load_corpus()
 search_index <- build_search(corpus)

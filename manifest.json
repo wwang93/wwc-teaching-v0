@@ -1323,7 +1323,7 @@
       "checksum": "87f9d4ec0ffedff42d9aa1a7e04c6c96"
     },
     "app.R": {
-      "checksum": "cd1e1176066e5bafb53e7032dff8cd23"
+      "checksum": "68cf7fd8638e528ad71e6aca8157f510"
     },
     "data/actions.json": {
       "checksum": "0b01ed39fa451c9e2e0b420ae31ee008"
@@ -1338,10 +1338,10 @@
       "checksum": "c1c467d715ed9b4c67aa81bab6e7080e"
     },
     "modules/ai.R": {
-      "checksum": "1ea64523987965ef8f5f1e7aa5058a96"
+      "checksum": "bf8fd6a612d6be821faade4b18a7b5ec"
     },
     "modules/core.R": {
-      "checksum": "18ffa22babf3e95fa4d9af4fbfede6d2"
+      "checksum": "3545dd34af822939c37db8663fbdab08"
     },
     "modules/interface.R": {
       "checksum": "20bf81990121df2a349e6672bd6e0d31"
@@ -1350,7 +1350,7 @@
       "checksum": "6f756d3be2269eead0475cb62ccd2445"
     },
     "modules/server.R": {
-      "checksum": "b429f46e63da74287fa29c059cc34a7b"
+      "checksum": "73c77ad296cd1c13298741e57d056640"
     },
     "modules/storage.R": {
       "checksum": "c96292ed7f26236c9a763c9bd9247ff1"

@@ -23,11 +23,15 @@ app_config <- function() {
     supabase_key = server_key,
     session_limit = env_int("WWC_AI_SESSION_LIMIT", 15, high = 100),
     daily_limit = env_int("WWC_AI_DAILY_LIMIT", 150),
-    max_output_tokens = env_int("WWC_AI_MAX_OUTPUT_TOKENS", 1800, low = 500, high = 4000),
+    max_output_tokens = env_int("WWC_AI_MAX_OUTPUT_TOKENS", 4000, low = 500, high = 4000),
+    reasoning_effort = trimws(Sys.getenv("WWC_AI_REASONING_EFFORT", "")),
+    ai_timeout = env_int("WWC_AI_TIMEOUT_SECONDS", 60, low = 15, high = 180),
     research_enabled = identical(Sys.getenv("WWC_RESEARCH_ENABLED", "false"), "true"),
     consent_version = Sys.getenv("WWC_CONSENT_VERSION", "product-feedback-v1"),
     consent_text = Sys.getenv("WWC_CONSENT_TEXT", "If you opt in, we will save your questions, AI replies, sources you open, and plan decisions to improve this application. Do not include student names or identifying details. You can stop recording or delete this session's saved data below. Browsing and AI use are available without opting in."))
   stopifnot(cfg$mode %in% c("local", "public"), cfg$storage %in% c("sqlite", "supabase"))
+  if (!cfg$reasoning_effort %in% c("", "none", "low", "medium", "high", "xhigh", "max"))
+    stop("Invalid configuration: WWC_AI_REASONING_EFFORT", call. = FALSE)
   cfg$ai_enabled <- nzchar(cfg$api_key) && nzchar(cfg$model)
   if (cfg$storage == "supabase" && (!grepl("^https://[a-zA-Z0-9.-]+$", cfg$supabase_url) || !nzchar(cfg$supabase_key)))
     stop("Configure SUPABASE_URL and SUPABASE_SECRET_KEY (or legacy SUPABASE_SERVICE_ROLE_KEY) on the server.", call. = FALSE)
@@ -49,16 +53,37 @@ load_corpus <- function() {
   c
 }
 
+service_failure <- function(kind, http_status = NULL, provider_code = NULL) {
+  stop(structure(list(message = paste("Service request failed:", kind), call = NULL,
+    kind = kind, http_status = http_status, provider_code = provider_code),
+    class = c("wwc_service_error", "error", "condition")))
+}
+
+parse_service_response <- function(r) {
+  if (r$status_code < 200 || r$status_code >= 300) {
+    body <- tryCatch(jsonlite::fromJSON(rawToChar(r$content), simplifyVector = FALSE), error = function(e) NULL)
+    code <- if (is.list(body) && is.list(body$error)) body$error$code else NULL
+    # Keep only known machine codes. Provider messages can echo credentials or user input.
+    allowed <- c("invalid_api_key", "model_not_found", "insufficient_quota", "rate_limit_exceeded",
+      "billing_hard_limit_reached", "unsupported_parameter", "unsupported_value", "invalid_json_schema",
+      "invalid_value", "context_length_exceeded", "server_error")
+    if (!is.character(code) || length(code) != 1L || is.na(code) || !code %in% allowed) code <- NULL
+    service_failure("http", r$status_code, code)
+  }
+  if (!length(r$content)) return(NULL)
+  tryCatch(jsonlite::fromJSON(rawToChar(r$content), simplifyVector = FALSE),
+    error = function(e) service_failure("invalid_response"))
+}
+
 post_json <- function(url, body, headers = list(), timeout = 45) {
   h <- curl::new_handle()
   payload <- if (is.list(body) && !length(body)) "{}" else json(body)
   curl::handle_setopt(h, postfields = payload, timeout = timeout, connecttimeout = 10,
     followlocation = FALSE)
   curl::handle_setheaders(h, .list = c(list("Content-Type" = "application/json"), headers))
-  r <- curl::curl_fetch_memory(url, h)
-  # Never surface provider response bodies, request headers or secrets in the UI/logs.
-  if (r$status_code < 200 || r$status_code >= 300)
-    stop(sprintf("Service request failed (HTTP %s).", r$status_code), call. = FALSE)
-  if (!length(r$content)) return(NULL)
-  jsonlite::fromJSON(rawToChar(r$content), simplifyVector = FALSE)
+  r <- tryCatch(curl::curl_fetch_memory(url, h), error = function(e) {
+    timed_out <- inherits(e, "curl_error_operation_timedout") || grepl("timed out|timeout", conditionMessage(e), ignore.case = TRUE)
+    service_failure(if (timed_out) "timeout" else "network")
+  })
+  parse_service_response(r)
 }

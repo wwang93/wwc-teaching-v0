@@ -161,11 +161,11 @@ server <- function(input,output,session) {
       if(!is.null(recording_epoch)&&identical(recording_epoch,isolate(consent_epoch())))log_event(type,payload)
     }
     request<-build_ai_request(question,history(),ctx,retrieval,cfg,intent)
-    log_event("ai_question",list(question=question,context=ctx,intent=intent,retrieval=retrieval,prompt_version=PROMPT_VERSION,model=cfg$model))
+    request_settings<-list(max_output_tokens=cfg$max_output_tokens,reasoning_effort=cfg$reasoning_effort,timeout_seconds=cfg$ai_timeout)
+    log_event("ai_question",list(question=question,context=ctx,intent=intent,retrieval=retrieval,prompt_version=PROMPT_VERSION,model=cfg$model,request_settings=request_settings))
     updateTextAreaInput(session,"chat_question",value="")
-    worker_cfg<-cfg[c("api_key","model")]
-    task<-promises::future_promise(perform_ai_request(request,worker_cfg),globals=list(request=request,worker_cfg=worker_cfg,
-      perform_ai_request=perform_ai_request,post_json=post_json,json=json,`%||%`=`%||%`),packages=c("curl","jsonlite"),seed=TRUE)
+    worker_cfg<-cfg[c("api_key","model","ai_timeout")]
+    task<-promises::future_promise(perform_ai_request(request,worker_cfg),globals=ai_worker_globals(request,worker_cfg),packages=c("curl","jsonlite"),seed=TRUE)
     promises::then(task,onFulfilled=function(result){
       if(session$isClosed())return(NULL)
       busy(FALSE);if(!identical(generation,isolate(chat_generation())))return(NULL)
@@ -173,13 +173,17 @@ server <- function(input,output,session) {
       if(is.null(answer)){chat_error("The answer did not pass its source checks. Please try a narrower question or inspect the original practice.")
         log_reply("ai_answer_rejected",list(question=question,response_id=result$response_id,model=result$model,candidate_response=result$answer,usage=result$usage,prompt_version=PROMPT_VERSION));return(NULL)}
       turn<-list(question=question,response=answer,action_id=aid,context=ctx,retrieval=retrieval,model=result$model,response_id=result$response_id,
-        usage=result$usage,prompt_version=PROMPT_VERSION,started_at=started,completed_at=utc_now())
+        usage=result$usage,prompt_version=PROMPT_VERSION,request_settings=request_settings,started_at=started,completed_at=utc_now())
       history(append(isolate(history()),list(turn)));log_reply("ai_answer_displayed",turn);session$sendCustomMessage("chat_updated",list())
     },onRejected=function(error){
+      diagnostic<-ai_failure_details(error)
+      # Operational diagnostics contain no question, response body, session ID or credentials.
+      message("[wwc-ai] ",json(diagnostic[c("reference","http_status","provider_code")]))
       if(session$isClosed())return(NULL)
       busy(FALSE);if(!identical(generation,isolate(chat_generation())))return(NULL)
-      chat_error("The AI service could not complete this request. Your plan is unchanged; please try again.")
-      log_reply("ai_service_error",list(question=question,started_at=started,model=cfg$model))
+      chat_error(diagnostic$message)
+      log_reply("ai_service_error",list(question=question,started_at=started,completed_at=utc_now(),model=cfg$model,
+        diagnostic=diagnostic,request_settings=request_settings))
     });invisible(NULL)
   }
   observeEvent(input$ask_home,{run_search();selected_action(NULL);selected_source(NULL);revision(revision()+1L)

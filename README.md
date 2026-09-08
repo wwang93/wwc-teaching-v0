@@ -11,7 +11,7 @@
 - 教师可以 Try / Adapt / Set aside，写下行动和理由，保存到当前工作区并下载 TXT。
 - 交互记录默认关闭；同意后才保存后续事件，支持停止记录、重试、下载与删除当前会话的数据。无账号、无跨设备身份。
 
-**代码和本地验证已完成；此交付没有接入真实模型账号、Supabase 项目或 Posit 公开地址。** 未配置模型时，界面会如实说明 AI 尚未连接；没有把固定答案当作真实 AI。
+**当前修订为 0.3.1：增加分类错误诊断、可配置推理强度及超时，默认输出预算提高到 4000。** 此前公网 0.3.0 已成功完成一次 gpt-5.6-sol 教学调整请求；这不代表长期可靠性或研究数据持久化已经完成验收。具体测试边界见 [VALIDATION.md](VALIDATION.md)，更新已有部署见 [DEPLOYMENT.md](DEPLOYMENT.md)。
 
 ## 本地 / Posit Cloud 开发
 
@@ -33,6 +33,7 @@ shiny::runApp()
 ```sh
 Rscript tests/check_v03.R
 Rscript tests/check_async.R
+Rscript tests/check_ai_errors.R
 Rscript scripts/preflight.R
 ```
 

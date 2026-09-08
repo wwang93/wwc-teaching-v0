@@ -1,6 +1,6 @@
 # 免注册公开部署：V0.3
 
-当前包可本地运行。真实模型 API、Supabase 写入、Posit 公开部署及域名尚未在你的账号中执行。
+当前修订为 0.3.1。此前发布的 0.3.0 已在公网完成一次真实 gpt-5.6-sol 调用；本次修订的离线验证和线上验证范围见 VALIDATION.md。
 
 ## 1. 先配置服务器
 
@@ -29,6 +29,30 @@ source("scripts/live_smoke.R")
 ```
 
 preflight 仅显示配置是否存在及存储探测结果，不输出密钥。live_smoke 会创建和删除本脚本生成的测试事件，核对幂等写入，并发送一次真实模型请求；会消耗少量 API 用量。没有配置时立即停止，不返回模拟通过。
+
+### 从 0.3.0 更新到 0.3.1
+
+更新 GitHub 代码后，在 Connect Cloud 重新部署。若云端已经显式设置 `WWC_AI_MAX_OUTPUT_TOKENS=1800`，代码更新不会覆盖该值；建议将它改为 `4000` 再测试相同问题。0.3.1 的默认值为 4000，允许范围仍为 500–4000。该上限包含推理与答案输出，提高上限不代表每次必然用满，但可能增加实际用量。
+
+| 新增配置 | 默认值 | 用法 |
+| --- | --- | --- |
+| `WWC_AI_REASONING_EFFORT` | 空白，使用模型默认值 | 可选 none / low / medium / high / xhigh / max；必须受所选模型支持。gpt-5.6-sol 默认为 medium，可单独比较 low 的延迟和回答质量。 |
+| `WWC_AI_TIMEOUT_SECONDS` | 60 | 每次 HTTP 请求等待秒数，允许 15–180。先保持默认，不把所有失败都当作超时。 |
+
+新增变量只有部署 0.3.1 后才会生效。模型与引用规则保持不变，没有自动重试或自动切换模型。环境变量修改后需重启或重新部署应用。成功答案和已同意记录的错误事件包含 request_settings，便于比较参数；空白 reasoning_effort 表示模型默认值。
+
+失败时界面提供可报告的 Reference，Posit Logs 中有对应 `[wwc-ai]` 分类。日志只写入分类、HTTP 状态和已知错误码，不写原始服务商错误消息、密钥、用户问题或会话身份。
+
+| Reference | 如何处理 |
+| --- | --- |
+| AI-OUTPUT-LIMIT | API 明确返回输出额度耗尽；核对云端预算值，缩小请求或调节受支持的推理强度。不会展示不完整答案。 |
+| AI-TIMEOUT / AI-NETWORK | 分别检查等待时间或服务连通性。 |
+| AI-AUTHENTICATION / AI-MODEL-ACCESS | 分别检查产品 API key，或账号是否有权调用配置的模型。不要在聊天中发送密钥。 |
+| AI-BILLING / AI-RATE-LIMIT | 分别检查 API 项目额度，或等待请求速率恢复。 |
+| AI-REQUEST-CONFIG | 检查参数和结构化输出配置；Logs 可能包含 unsupported_parameter 等安全错误码。 |
+| AI-UPSTREAM / AI-INCOMPLETE / AI-INVALID-RESPONSE / AI-INTERNAL | 分别为服务商错误、其他未完成、不可解析响应或应用内部错误。报告 Reference 及发生时间。 |
+
+官方依据：[GPT-5.6 Sol](https://developers.openai.com/api/docs/models/gpt-5.6-sol)、[Responses 输出预算](https://developers.openai.com/api/reference/cli/resources/responses/methods/create)。
 
 ## 2. 从 Posit Cloud 开发，向 Connect Cloud 发布
 
